@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 get_ipython().system(' pip install plotly')
@@ -22,7 +22,7 @@ from sympy import *
 import random
 
 
-# In[17]:
+# In[ ]:
 
 
 while True:
@@ -43,30 +43,21 @@ while True:
         fig.show()
         break
     elif answer == 1:
-        x, y = symbols('x y')
-        b = []
-        xs = []
-        r = []
-        ys = []
-        nums = int(input("Input amount of Data: "))
-        equation = str(input("Equation: y = "))
-        for i in range(nums):
-            r = int(i)
-            xs.append(int(r))
-            b.append(equation.replace("x", str(r)))
-            tempeq = equation.replace("x",str(i))
-            try:
-                temp = eval(tempeq)
-            except ZeroDivisionError:
-                print("0 lmao")
-            print(temp)
-            ys.append(temp)
-        fig = px.scatter(x=xs,y=ys)
-        fig.show()
+        import numpy as np  
+        import matplotlib.pyplot as plt  
+        leftBound = int(input("Enter LeftBound: "))
+        rightBound = int(input("Enter RightBound: "))
+        userEq = input("Enter Equation: y = ")
+
+        def graph(formula, x_range):  
+            x = np.array(x_range)  
+            y = eval(formula)
+            plt.plot(x, y)
+            plt.show()
+        
+        graph(userEq, range(leftBound, rightBound))
         break
 
-
-# ### 
 
 # In[ ]:
 
