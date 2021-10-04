@@ -4,10 +4,10 @@
 # In[ ]:
 
 
-# get_ipython().system(' pip install plotly')
-# get_ipython().system(' pip install cufflinks')
-# get_ipython().system(' pip install chart_studio')
-# get_ipython().system(' pip install matplotlib')
+get_ipython().system(' pip install plotly')
+get_ipython().system(' pip install cufflinks')
+get_ipython().system(' pip install chart_studio')
+get_ipython().system(' pip install matplotlib')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -26,7 +26,16 @@ import random
 
 
 while True:
-    answer = int(input("graph equation or plot points? (1,2): "))
+    while True:
+        try:
+            answer = int(input("graph equation or plot points? (1,2): "))
+            if answer == 1:
+                break
+            elif answer == 2:
+                break
+        except ValueError:
+            answer = 0
+            print("it says 1 or 2 cmon man")
     if answer == 2:
         x = str
         y = str
@@ -43,6 +52,8 @@ while True:
         fig.show()
         break
     elif answer == 1:
+        import numpy as np  
+        import matplotlib.pyplot as plt  
         leftBound = int(input("Enter LeftBound: "))
         rightBound = int(input("Enter RightBound: "))
         userEq = input("Enter Equation: y = ")
@@ -55,6 +66,12 @@ while True:
         
         graph(userEq, range(leftBound, rightBound))
         break
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
