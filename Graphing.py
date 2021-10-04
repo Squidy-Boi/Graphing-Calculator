@@ -45,19 +45,25 @@ while True:
         x = str
         y = str
         b = []
+        xs = []
+        r = []
+        ys = []
         leftBound = int(input("Input LeftBound: "))
         rightBound = int(input("Input RightBound: "))
         equation = str(input("Equation: "))
         equation = equation.replace("y = ","")
         for i in range(rightBound):
-            b.append(equation.replace("x", str(random.randint(leftBound, rightBound))))
+            r = random.randint(leftBound, rightBound)
+            xs.append(int(r))
+            b.append(equation.replace("x", str(r)))
+        print(xs)
         split = np.array_split(b,rightBound)
         for i in split:
-            d.append = eval(i) # ValueError: source code string cannot contain null bytes
+            ys.append(eval(i))   
             print(i)
 
 
-#  
+# ## 
 
 # In[ ]:
 
