@@ -59,7 +59,7 @@ while True:
         print(xs)
         split = np.array_split(b,rightBound)
         for i in split:
-            ys.append(eval(i))   #  ValueError: source code string cannot contain null bytes
+            ys.append(eval(str(i))) 
             print(i)
 
 
