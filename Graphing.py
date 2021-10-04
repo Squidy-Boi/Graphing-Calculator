@@ -18,6 +18,7 @@ import plotly.graph_objs as go
 from plotly.offline import iplot
 import plotly.express as px
 import math
+from sympy import *
 import random
 
 
@@ -28,7 +29,7 @@ while True:
     answer = int(input("graph equation or plot points? (1,2): "))
     if answer == 2:
         x = str
-        y= str
+        y = str
         b = []
         d = []
         leftBound = int(input('Input Leftbound: '))
@@ -42,28 +43,27 @@ while True:
         fig.show()
         break
     elif answer == 1:
-        x = str
-        y = str
+        x, y = symbols('x y')
         b = []
         xs = []
         r = []
         ys = []
         leftBound = int(input("Input LeftBound: "))
         rightBound = int(input("Input RightBound: "))
-        equation = str(input("Equation: "))
-        equation = equation.replace("y = ","")
+        equation = str(input("Equation: y = "))
         for i in range(rightBound):
-            r = random.randint(leftBound, rightBound)
+            r = int(i)
             xs.append(int(r))
             b.append(equation.replace("x", str(r)))
-        print(xs)
-        split = np.array_split(b,rightBound)
-        for i in split:
-            ys.append(eval(str(i))) 
-            print(i)
+            tempeq = equation.replace("x",str(i))
+            temp = eval(tempeq)
+            ys.append(temp)
+        fig = px.scatter(x=xs,y=ys)
+        fig.show()
+        break
 
 
-# ## 
+# ### 
 
 # In[ ]:
 
