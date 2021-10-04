@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 get_ipython().system(' pip install plotly')
@@ -22,7 +22,7 @@ from sympy import *
 import random
 
 
-# In[ ]:
+# In[17]:
 
 
 while True:
@@ -48,15 +48,18 @@ while True:
         xs = []
         r = []
         ys = []
-        leftBound = int(input("Input LeftBound: "))
-        rightBound = int(input("Input RightBound: "))
+        nums = int(input("Input amount of Data: "))
         equation = str(input("Equation: y = "))
-        for i in range(rightBound):
+        for i in range(nums):
             r = int(i)
             xs.append(int(r))
             b.append(equation.replace("x", str(r)))
             tempeq = equation.replace("x",str(i))
-            temp = eval(tempeq)
+            try:
+                temp = eval(tempeq)
+            except ZeroDivisionError:
+                print("0 lmao")
+            print(temp)
             ys.append(temp)
         fig = px.scatter(x=xs,y=ys)
         fig.show()
