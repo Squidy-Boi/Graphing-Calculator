@@ -4,10 +4,10 @@
 # In[ ]:
 
 
-get_ipython().system(' pip install plotly')
-get_ipython().system(' pip install cufflinks')
-get_ipython().system(' pip install chart_studio')
-get_ipython().system(' pip install matplotlib')
+# get_ipython().system(' pip install plotly')
+# get_ipython().system(' pip install cufflinks')
+# get_ipython().system(' pip install chart_studio')
+# get_ipython().system(' pip install matplotlib')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -43,8 +43,6 @@ while True:
         fig.show()
         break
     elif answer == 1:
-        import numpy as np  
-        import matplotlib.pyplot as plt  
         leftBound = int(input("Enter LeftBound: "))
         rightBound = int(input("Enter RightBound: "))
         userEq = input("Enter Equation: y = ")
