@@ -4,10 +4,10 @@
 # In[ ]:
 
 
-get_ipython().system(' pip install plotly')
-get_ipython().system(' pip install cufflinks')
-get_ipython().system(' pip install chart_studio')
-get_ipython().system(' pip install matplotlib')
+# get_ipython().system(' pip install plotly')
+# get_ipython().system(' pip install cufflinks')
+# get_ipython().system(' pip install chart_studio')
+# get_ipython().system(' pip install matplotlib')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
