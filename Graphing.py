@@ -22,16 +22,18 @@ from sympy import *
 import random
 
 
-# In[ ]:
+# In[10]:
 
 
 while True:
     while True:
         try:
-            answer = int(input("graph equation or plot points? (1,2): "))
+            answer = int(input("graph equation, plot points or solve an equation? (1,2,3): "))
             if answer == 1:
                 break
             elif answer == 2:
+                break
+            elif answer == 3:
                 break
         except ValueError:
             answer = 0
@@ -51,9 +53,7 @@ while True:
         fig = px.scatter(x=b,y=d,trendline='ols')
         fig.show()
         break
-    elif answer == 1:
-        import numpy as np  
-        import matplotlib.pyplot as plt  
+    elif answer == 1: 
         leftBound = int(input("Enter LeftBound: "))
         rightBound = int(input("Enter RightBound: "))
         userEq = input("Enter Equation: y = ")
@@ -65,14 +65,22 @@ while True:
             plt.show()
         
         graph(userEq, range(leftBound, rightBound))
-        break
+    elif answer == 3:
+        
+        userEq = input("Enter Equation y = ")
+        xval = input("Enter x value: ")
+        userEq = userEq.replace("x", xval)
+        try: 
+            y = eval(userEq)
+            print("The answer is: " + str(y))
+            break
+        except ZeroDivisionError:
+            print("Undefined")
+            break
+        
 
 
-# In[ ]:
-
-
-
-
+# # 
 
 # In[ ]:
 
