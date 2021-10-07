@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# get_ipython().system(' pip install plotly')
-# get_ipython().system(' pip install cufflinks')
-# get_ipython().system(' pip install chart_studio')
-# get_ipython().system(' pip install matplotlib')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -21,27 +11,23 @@ import math
 from sympy import *
 import random
 
+def graph(formula, x_range):  
+    x = np.array(x_range)  
+    y = eval(formula)
+    plt.plot(x, y)
+    plt.show()
 
-# In[ ]:
-
-def graphing():
+def graph2(formula, x_range, color, lowerBound, upperBound):
+    x = np.array(x_range)
+    y = eval(formula)
+    plt.ylim(lowerBound,upperBound)
+    plt.plot(x,y)
     
-    def graph(formula, x_range):  
-        x = np.array(x_range)  
-        y = eval(formula)
-        plt.plot(x, y)
-        plt.show()
-
-    def graph2(formula, x_range, color, lowerBound, upperBound):
-        x = np.array(x_range)
-        y = eval(formula)
-        plt.ylim(lowerBound,upperBound)
-        plt.plot(x,y)
-
+def graphing():
     while True:
         while True:
             try:
-                answer = int(input("graph equation, plot points, solve an equation, or graph multiple or stop? (1,2,3,4,5): "))
+                answer = int(input("graph equation, plot points, simple equation solver(one variable x), or graph multiple? (1,2,3,4): "))
                 if answer == 1:
                     break
                 elif answer == 2:
@@ -49,8 +35,6 @@ def graphing():
                 elif answer == 3:
                     break
                 elif answer == 4:
-                    break
-                elif answer == 5: 
                     break
             except ValueError:
                 answer = 0
@@ -110,17 +94,3 @@ def graphing():
                 graph2(userEq, range(leftBound,rightBound),tempColor,lowerBound,upperBound)
                 color.pop(0)
             plt.show()
-        elif answer == 5:
-            break
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
