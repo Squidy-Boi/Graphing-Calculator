@@ -2,6 +2,7 @@
 import complex
 from calculator import calculatorReal
 import math
+from Graphing import graphing
 #this is the intro where it will let the user which stuff they want to use
 
 print("TE 1\nEasily one of the Calculators\nV1.0")
@@ -11,7 +12,7 @@ whichMode = input("1: equation solver 2: complex number calculator\n3: graphing 
 #checks user input to determine which function to use
 def functionChooser(mode):
   if mode == "graphing" or mode == "3":
-    print("gotta import and add this function from tyler")
+    graphing()
   elif mode == "equation solver" or mode== "1":
     print("still needs to be created")
   elif mode == "complex number calculator" or mode == "2":
